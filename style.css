@@ -1,0 +1,305 @@
+@charset "UTF-8";
+
+/*
+*Theme Name: PodIa 
+*Author: Aldrick
+*Author URI: https://github.com/aldair-meneses/
+*Description: A theme specialized to PodIa. Project to unify Ia contents and podcasts.
+*Requires at least: 5.9
+*Requires PHP: 7.2
+*Version: 1.0
+*License: GNU General Public License v2 or later
+*License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*Text Domain: podia
+*Tested up to: 6.0
+*Tags: audio, one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, sticky-post
+
+PodIa is distributed under the terms of the GNU GPL.
+*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+    font-size: 62.5%;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+    list-style: none;
+    text-decoration: none;
+}
+
+img, svg, video {
+    max-width: 100%;
+    display: block;
+}
+
+:root {
+    /* Generic Colors */
+    --bg-white: #fff;
+
+    /* Polar Night Colors */
+    --nord-dark-bg-color: #2e3440;
+    --nord-dark-focused: #3b4252;
+    --nord-dark-text-active: #434c5e;
+    --nord-dark-text-color:#4c566a;
+
+
+    /* Snow Storm Colors */
+    --nord-light-focused: #d8dee9;
+    --nord-light-text-color: #e5e9f0;
+    --nord-light-bg-color: #eceff4;
+
+    --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Nord Frost */
+    --nord-frost-main: #8fbcbb;
+    --nord-frost-primary: #88c0d0;
+    --nord-frost-secondary: #81a1c1;
+    --nord-frost-ocean: #5e81ac;
+
+    /* Nord Aurora */
+    --nord-error-color: #bf616a;
+    --nord-dangerous-color: #d08770;
+    --nord-warning-color: #ebcb8b;
+    --nord-success-color: #a3be8c;
+    --nord-aurora-tertiary: #b48ead;
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.5;
+    background-color: var(--nord-light-bg-color);
+}
+
+main {
+    padding: 2rem;
+    width: min(100% - 4rem);
+    margin-inline: auto;
+}
+
+
+a {
+    color: var(--nord-dark-text-color);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: var(--nord-dark-focused);
+    text-decoration: underline;
+}
+
+
+h1 {
+    font-size: 1.8rem;
+    color: var(--nord-frost-ocean);
+}
+
+p {
+    color: var(--nord-dark-focused);
+    padding-bottom: 1.5rem;
+}
+
+
+.site-header__container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--nord-light-bg-color);
+    margin-bottom: 4rem;
+}
+
+
+.site-header__item {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.main-footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    background-color: var(--nord-dark-bg-color);
+}
+
+.main-footer__logo_site {
+    width: 150px;
+}
+
+.container {
+    padding: 4rem;
+}
+
+.post-container {
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.cat1  {
+    border-radius: 0 5px 0 5px;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.cat1 .entry-title {
+    color: var(--nord-frost-ocean);
+}
+
+.cat1 .entry-title::after {
+    content: "";
+    background-image: url('./assets/svg/tag-solid.svg');
+    background-position: center;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.size-post-thumbnail, .post-thumb img {
+    height: auto;
+    max-width: 300px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.entry-content {
+    padding: 3rem;
+}
+
+.entry-title {
+    color: var(--nord-dark-focused);
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.posts-section {
+    width: 85%;
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px -3px #2e3440;
+    margin-bottom: 20px;
+}
+
+.post-thumb {
+    display: inline-block;
+}
+
+.post-content > * {
+    margin-bottom: 1rem;
+}
+
+.pagination {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.reading-more {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--nord-frost-primary);
+    margin-top: 0.5rem;
+}
+
+.single__featured-image {
+    max-width: 800px;
+    display: block;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 5px;
+}
+
+.registered-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.registered-content input {
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 1.4rem;
+    padding: 1rem;
+    display: block;
+    border-radius: 1rem;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.registered-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.single__container {
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px -3px #2e3440;
+    margin-bottom: 20px;
+    max-width: 1170px;
+}
+
+.single__container .entry-title {
+    text-align: center;
+}
+
+.login-button {
+    padding: 0.5rem;
+    background-position-x: 10%;
+    transition: box-shadow 0.4s;
+}
+
+.login-button:hover, .login-button:focus  {
+    box-shadow: inset 10rem 0 0 0 var(--nord-frost-secondary);
+    text-decoration: none;
+    transition: box-shadow 0.7s;
+}   
+
+
+.logout-button {
+    padding: 0.5rem;
+    background-position-x: 10%;
+    transition: box-shadow 0.4s;
+}
+
+.logout-button:hover, .login-button:focus  {
+    box-shadow: inset 10rem 0 0 0 var(--nord-warning-color);
+    color: var(--nord-dark-bg-color);
+    text-decoration: none;
+    transition: box-shadow 0.7s;
+}   
