@@ -443,3 +443,36 @@ function podia_theme_setup_premium_category() {
 }
 
 add_action('after_setup_theme', 'podia_theme_setup_premium_category');
+
+
+function podia_theme_customize_register( $wp_customize) {
+	$wp_customize->add_section( 'banner_section', array(
+		'title' => 'Banner do site'
+	) );
+
+	$wp_customize->add_setting( 'custom_text_setting', array(
+        'default' => 'Texto de Apresentação',
+    ) );
+
+	$wp_customize->add_control( 'custom_text_control', array(
+        'label' => 'Texto de apresentação',
+        'section' => 'banner_section',
+        'settings' => 'custom_text_setting',
+        'type' => 'text',
+    ) );
+
+
+    $wp_customize->add_setting( 'custom_banner_setting', array(
+        'default' => get_template_directory_uri() . '/assets/img/home.jpg',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_image_control', array(
+        'label' => 'Banner',
+        'section' => 'banner_section',
+        'settings' => 'custom_banner_setting',
+    ) ) );
+
+}
+
+add_action ( 'customize_register', 'podia_theme_customize_register' );

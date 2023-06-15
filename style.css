@@ -136,6 +136,19 @@ p {
     margin: 1rem;
 }
 
+.home__cover {
+    display: block;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.home__cover .entry-title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 22px;
+}
+
+
 .main-footer__container {
     display: flex;
     flex-direction: column;

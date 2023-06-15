@@ -17,7 +17,6 @@
 // Loop personalizado onde a query (consulta) vai procurar por posts da categoria 'premium-content'.
 // Argumentos utilazados para personalizar o loop.
 
-
 $args = array(
     'post_type' => 'post',
     'category_name' => 'premium-content'
@@ -28,7 +27,7 @@ $custom_loop = new WP_Query($args);
 if ($custom_loop->have_posts()) :
     while ($custom_loop->have_posts()) :
         $custom_loop->the_post();
-        the_title('<p>', '</p>'); // titulo do post pertecente ao loop personalizado.
+        the_title(sprintf( '<h2><a class="entry-title" href="%s">', esc_url( get_permalink() )), '</a></h2>'); // titulo do post pertecente ao loop personalizado.
 
     endwhile;
 endif;
@@ -40,7 +39,7 @@ if (have_posts()) :
     while (have_posts()) :
         the_post();
 
-        the_title('<p>', '</p>'); // titulo do post pertecente ao loop padrão.
+        the_title(sprintf( '<h2><a class="entry-title" href="%s">', esc_url( get_permalink() )), '</a></h2>'); // titulo do post pertecente ao loop padrão.
 
     endwhile;
 endif;

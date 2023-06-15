@@ -14,7 +14,7 @@ while ( have_posts() ) :
 					<?php if( in_category( 'premium-content' ) &&  ( ! is_user_logged_in() ) ) :  
 						get_template_part( 'template-parts/content/content-single-premium' ) ?>
 					<?php else: 
-						get_template_part( 'template-parts/content/single' ); ?>
+						get_template_part( 'template-parts/content/content-single' ); ?>
 					<?php endif; ?>
 				</div>
 
