@@ -3,13 +3,12 @@
     if (have_posts()): ?>
 
         <section class="posts-section">
-            <!-- Carrega o loop dos posts -->
             <?php
             while (have_posts()):
                 the_post(); ?>
                 
                 <?php if ( in_category('premium-content')) : ?>
-                <div class="cat1">
+                <div class="premium-content__container">
                     <?php else: ?>
                             
                 <div class="post-container" <?php post_class(); ?>>

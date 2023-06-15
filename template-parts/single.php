@@ -11,16 +11,11 @@ while ( have_posts() ) :
 			</header>
 
 				<div class="entry-content">
-					<?php if( in_category( 'premium-content' ) &&  ( ! is_user_logged_in() ) ) : ?> 
-							<div class="registered-content">
-								<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>								
-								<p>Você precisa estar registrado para acessar esse conteúdo</p>
-								<?php wp_login_form(); ?>
-							</div>
-						<?php else: ?> 
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					<?php the_content(); ?>	
-						<?php endif; ?>
+					<?php if( in_category( 'premium-content' ) &&  ( ! is_user_logged_in() ) ) :  
+						get_template_part( 'template-parts/content/content-single-premium' ) ?>
+					<?php else: 
+						get_template_part( 'template-parts/content/single' ); ?>
+					<?php endif; ?>
 				</div>
 
 		</article><!-- #post-<?php the_ID(); ?> -->

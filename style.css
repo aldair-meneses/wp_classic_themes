@@ -97,7 +97,7 @@ main {
 
 
 a {
-    color: var(--nord-dark-text-color);
+    color: var(--nord-light-text-color);
     font-size: 1.4rem;
     text-transform: uppercase;
 }
@@ -120,10 +120,13 @@ p {
 
 
 .site-header__container {
+    position: sticky;
+    top: 0;
     text-align: center;
     margin: 0 auto;
     padding: 2rem;
-    background-color: var(--nord-light-bg-color);
+    /* background-color: var(--nord-light-bg-color); */
+    background-color: var(--nord-dark-bg-color);
     margin-bottom: 4rem;
 }
 
@@ -157,18 +160,18 @@ p {
     padding-right: 2rem;
 }
 
-.cat1  {
+.premium-content__container  {
     border-radius: 0 5px 0 5px;
     padding-bottom: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
-.cat1 .entry-title {
+.premium-content__container .entry-title {
     color: var(--nord-frost-ocean);
 }
 
-.cat1 .entry-title::after {
+.premium-content__container .entry-title::after {
     content: "";
     background-image: url('./assets/svg/tag-solid.svg');
     background-position: center;

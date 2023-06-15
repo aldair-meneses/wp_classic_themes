@@ -1,8 +1,8 @@
 <?php
 get_header();
-if ( is_archive() ) {
-	get_template_part( 'template-parts/archive' ); 
-} else if ( is_single() ){
+if ( is_home() ) {
+	get_template_part( 'template-parts/content/content' ); 
+} else if ( is_singular() ){
 	get_template_part( 'template-parts/single' );
 } else {
 	get_404_template();

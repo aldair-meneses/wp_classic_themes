@@ -5,7 +5,7 @@ $site_title = get_bloginfo( 'name' );
 
 <header class="site-header__container">
 <nav class="site-header__nav">
-    <li class="site-header__item"><a href="<?php echo esc_url( home_url() ); ?>"><?php echo esc_html($site_title) ?></a></li>
+    <li class="site-header__item"><a href="<?php echo esc_url( home_url() ); ?>"><?php echo esc_html( $site_title ) ?></a></li>
     <li class="site-header__item"><a href="#">Blog</a></li>
     <?php 
     if( ! is_user_logged_in() ) : ?>
